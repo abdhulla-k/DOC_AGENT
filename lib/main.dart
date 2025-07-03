@@ -14,7 +14,7 @@ class MentalHealthApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Soul Solusions",
-      home: OnboardingScreen()
+      home: OnboardingScreen(),
     );
   }
 }

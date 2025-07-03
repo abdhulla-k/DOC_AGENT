@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import "package:mental_health_app/features/auth/screens/login_screen.dart";
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
@@ -14,26 +15,20 @@ class OnboardingScreen extends StatelessWidget {
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage("assets/images/black_bg.png"),
-                fit: BoxFit.cover
-              )
+                fit: BoxFit.cover,
+              ),
             ),
-            padding: const EdgeInsets.only(
-              top: 120,
-              bottom: 120
-            ),
+            padding: const EdgeInsets.only(top: 120, bottom: 120),
             child: Container(
               width: double.infinity,
-              padding: const EdgeInsets.only(
-                right: 20,
-                left: 20
-              ),
+              padding: const EdgeInsets.only(right: 20, left: 20),
               child: Text(
                 "Welcome to \nSoul Solutions",
                 textAlign: TextAlign.start,
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 34,
-                  fontWeight: FontWeight.bold
+                  fontWeight: FontWeight.bold,
                 ),
               ),
             ),
@@ -48,19 +43,16 @@ class OnboardingScreen extends StatelessWidget {
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(5),
                   topRight: Radius.circular(5),
-                )
+                ),
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image.asset("assets/images/doctor_illustration.png"),
-                  const SizedBox(height:30),
+                  const SizedBox(height: 30),
                   const Text(
                     "Get support from thousands of experts",
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.black54
-                    ),
+                    style: TextStyle(fontSize: 16, color: Colors.black54),
                   ),
                   const SizedBox(height: 15),
 
@@ -70,10 +62,17 @@ class OnboardingScreen extends StatelessWidget {
                       backgroundColor: const Color.fromARGB(255, 170, 203, 124),
                       minimumSize: const Size(350, 50),
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10)
-                      )
+                        borderRadius: BorderRadius.circular(10),
+                      ),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const LoginScreen(),
+                        ),
+                      );
+                    },
                     child: const Text(
                       "Get Start",
                       style: TextStyle(
@@ -81,14 +80,14 @@ class OnboardingScreen extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                         color: Colors.black87,
                       ),
-                    )
-                  )
+                    ),
+                  ),
                 ],
               ),
             ),
           ),
         ],
-      )
+      ),
     );
   }
 }
